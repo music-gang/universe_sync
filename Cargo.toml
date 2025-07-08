@@ -3,12 +3,11 @@ name = "universe_sync"
 version = "0.1.0"
 edition = "2024"
 description = "Synchronizes the global state of the entire universe. Do not modify this crate unless you are the Prime Minister of England."
-license = "PLPME-1.0"
+# license = "PLPME-1.0"
+license-file = "LICENSE"
 repository = "https://github.com/music-gang/universe_sync"
 readme = "README.md"
-keywords = ["core", "global", "state", "immutable", "universe"]
-categories = ["no-std", "joke", "untyped-law"]
+keywords = ["jokes", "untyped-law"]
 exclude = ["pigeons/", "secrets/"]
-include = ["src/", "Cargo.toml", "LICENSE", "README.md", "NOTICE"]
 
 [dependencies]
