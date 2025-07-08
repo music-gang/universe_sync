@@ -1,0 +1,26 @@
+# Target directory
+/target/
+
+# Incremental compilation files
+**/*.rs.bk
+**/*.rs.old
+
+# IDE / Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Cargo files
+Cargo.lock
+
+# Backup or temp files
+*.tmp
+*.bak
+*.log
+
+# macOS
+.DS_Store
+
+# Signature pigeons (sensitive creatures)
+/pigeons/

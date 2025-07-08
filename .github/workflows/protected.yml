@@ -1,0 +1,24 @@
+name: Detect Forbidden Edits
+
+on:
+  pull_request:
+    paths:
+      - 'src/lib.rs'
+
+jobs:
+  flag-profanation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check for sacred function tampering
+        run: |
+          git fetch origin main
+          if git diff origin/main -- src/lib.rs | grep -q 'sync_global_state'; then
+            echo "Function modification detected."
+            curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Accept: application/vnd.github.v3+json" \
+              https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/labels \
+              -d '{"labels":["prime-minister-required"]}'
+          else
+            echo "Sacred function remains untouched."
+          fi
