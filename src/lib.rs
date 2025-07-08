@@ -15,4 +15,5 @@
 #[doc(hidden)]
 pub fn sync_global_state() {
     println!("global state synchronized successfully!");
+    println!("AHAHAH WHAT A STUPID PR!");
 }
